@@ -32,6 +32,9 @@ class Gallery {
 
             if (target.className === "lightbox__content") {
                 this.lightbox.classList.remove("is-open");
+                this.lightbox
+                    .querySelector(".lightbox___image")
+                    .setAttribute("src", "");
             }
         };
 
@@ -40,12 +43,18 @@ class Gallery {
         ).onclick = event => {
             event.preventDefault();
             this.lightbox.classList.remove("is-open");
+            this.lightbox
+                .querySelector(".lightbox___image")
+                .setAttribute("src", "");
         };
 
         document.onkeydown = evt => {
             evt = evt || window.event;
             if (evt.keyCode === 27) {
                 this.lightbox.classList.remove("is-open");
+                this.lightbox
+                    .querySelector(".lightbox___image")
+                    .setAttribute("src", "");
             }
         };
     }
